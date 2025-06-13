@@ -393,7 +393,7 @@ protected:
       if (this->wait_until == 0) {
         uint32_t delay = this->services[this->processing_service]->get_delay();
         if (delay > 0) {
-          ESP_LOGD(TAG, "[%s] Waiting for %dms for service[%d] (%s)", to_string(this->address_).c_str(), delay,
+          ESP_LOGD(TAG, "[%s] Waiting for %dms for service[%lu] (%s)", to_string(this->address_).c_str(), delay,
                    this->processing_service + 1, this->services[this->processing_service]->service_uuid_.to_string().c_str());
           this->wait_until = millis() + delay;
           return false;
